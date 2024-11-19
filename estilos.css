@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  padding: 1px 10px;
+  background-image: url("assets/img/wallpaper.png"); /* Cambia esta ruta a la imagen que quieras usar */
+  background-size: cover; /* La imagen cubrirá todo el contenedor */
+  background-position: center; /* Centra la imagen en el contenedor */
+
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  height: 100vh; /* Ocupa todo el alto de la ventana */
+  padding-bottom: 15px;
+}
+
+header {
+  width: 550px;
+  background-color: rgb(10, 58, 216);
+  color: #fff;
+  padding: 9px 22px;
+  margin: 15px;
+}
+.main_body {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  background-color: #fff;
+}
+.main_izq {
+  padding: 12px;
+  width: 770px;
+  margin-left: 55px;
+}
+.main_boxes {
+  width: 350px;
+  height: 400px;
+}
+.main_stage {
+  margin: 25px 0px;
+}
+.entree_stage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+.area_text {
+  width: 330px;
+  height: 270px;
+  resize: none;
+  padding: 4px;
+  font-size: 20px;
+}
+
+#calc_btn {
+  width: 78px; /* Ancho adecuado para el botón */
+  height: 32px; /* Altura del botón */
+  background-color: #3b8b16; /* Color verde cuando está disponible */
+  color: white; /* Color de texto blanco */
+  margin-top: 10px;
+  border: none; /* Sin borde */
+
+  cursor: pointer; /* Cursor tipo mano */
+  transition: background-color 0.3s, transform 0.1s ease; /* Transición suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  user-select: none; /* Impide la selección de texto */
+}
+
+#calc_btn:disabled {
+  background-color: #cccccc; /* Color gris cuando el botón está deshabilitado */
+  cursor: not-allowed; /* Cursor de no permitido */
+}
+
+.desaparecer {
+  display: none;
+}
+.space_msj {
+  height: 50px;
+}
+.message {
+  color: red;
+}
+
+.number_result {
+  font-weight: bold;
+}
+.message,
+.number_result {
+  font-size: 18px;
+}
+.resultado {
+  width: 100%; /* El contenedor ocupará el 100% del ancho disponible */
+  word-wrap: break-word; /* Permite que las palabras largas (como números grandes) se dividan y pasen a la siguiente línea */
+  overflow-wrap: break-word; /* Alternativa moderna que hace lo mismo */
+  white-space: normal; /* Asegura que el texto no se quede en una sola línea */
+}
+
+.error_text-area {
+  border: 2px solid red; /* Borde rojo para resaltar el error */
+  background-color: #ffe6e6; /* Fondo rosado claro */
+  color: #333; /* Color del texto, para garantizar legibilidad */
+  border-radius: 5px; /* Bordes redondeados */
+
+  outline: none; /* Sin contorno adicional al seleccionar */
+  transition: all 0.3s ease; /* Transición para suavizar cambios */
+}
+
+/* Agregar un efecto cuando el usuario enfoca el textarea */
+.error_text-area:focus {
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.5); /* Resplandor rojo */
+}
+.main_boxes {
+  padding: 12px;
+  background-color: #fff;
+}
+.pre_info {
+  font-size: 24px;
+  padding: 13px 22px;
+  color: #fff;
+  background-color: #3b8b16;
+}
+.equis {
+  font-size: 30px;
+  user-select: none;
+}
+.contenedor_btn_prime {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 12px;
+  padding-left: 12px;
+  margin-bottom: 16px;
+}
+.prime_btn {
+  display: inline-block;
+  padding: 4px 12px; /* Espaciado interno para darle tamaño */
+  background-color: rgb(10, 58, 216);
+  color: white; /* Color del texto */
+  text-align: center; /* Alinear el texto al centro */
+
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cursor de tipo 'mano' cuando se pasa por encima */
+  transition: background-color 0.3s, transform 0.1s ease; /* Efectos de transición */
+  box-shadow: 0 1px #999; /* Sombra de caja para dar efecto de elevación */
+  user-select: none; /* Impide la selección de texto */
+}
+
+/* Estilo cuando el div está en el estado "activo" (presionado) */
+.prime_btn_activo {
+  background-color: #6c757d; /* Color de fondo gris cuando el botón está presionado */
+  transform: translateY(
+    2px
+  ); /* Desplazar el botón hacia abajo para simular que está presionado */
+  box-shadow: 0 2px #666; /* Disminuir la sombra al ser presionado */
+}
+
+/* Estilo cuando el ratón está sobre el div */
+.prime_btn:hover {
+  background-color: rgb(
+    129,
+    147,
+    189
+  ); /* Un azul más oscuro y saturado para hover */
+}
+
+.screen_ayuda {
+  font-size: 14px;
+}
+.ejemplos_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 12px;
+}
+.ejemplo {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(
+    30,
+    80,
+    200
+  ); /* Un azul más oscuro y saturado para hover */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none; /* Sin bordes */
+  cursor: pointer; /* Cursor de tipo 'mano' cuando se pasa por encima */
+  transition: background-color 0.3s, transform 0.1s ease; /* Efectos de transición */
+
+  user-select: none; /* Impide la selección de texto */
+}
+.ejemplo:active {
+  background-color: #999;
+}
+.main_izq {
+  border: 1px solid #000;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+.main_boxes {
+  border: 1px solid #000;
+}
+.about_me {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.logo {
+  width: 156px; /* Establecer el ancho del logo */
+  height: 80px; /* Mantener la proporción de la imagen */
+}
+.title_about {
+  color: #fff;
+  background-color: #3b8b16;
+  width: max-content;
+  padding: 12px 24px;
+  margin-bottom: 14px;
+}

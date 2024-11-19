@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karatsuba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title_h1">Karatsuba</h1>
+    </header>
+
+    <main class="main_body">
+
+        <!--Lado Izquierdo-->
+
+        <div class="main_izq">
+
+
+
+            <div class="pre_info">
+                <p> Multiplica numeros grandes utilizando el algoritmo de Karatsuba
+                </p>
+
+            </div>
+
+            <div class="main_stage">
+                <div class="info">Digite los numeros a multiplicar en los siguientes recuadros</div>
+                <div class="entree_stage">
+                    <textarea class="area_text" id="text_area_A"
+                        placeholder="Ingresa el número a multiplicar"></textarea>
+                    <div class="equis">X</div>
+                    <textarea class="area_text" id="text_area_B"
+                        placeholder="Ingresa el número a multiplicar"></textarea>
+                </div>
+                <div class="conta_button">
+                    <button id="calc_btn" disabled>IR</button>
+                </div>
+            </div>
+            <div class="space_msj">
+                <p class="message desaparecer" id="message_error">
+                    Tu entrada actual es invalida
+                </p>
+                <div class="resultado desaparecer" id="resultado">
+                    Su resultado es: <span class="number_result">10</span>
+                </div>
+            </div>
+
+            <div class="about_algoritm">
+                <h2 class="title_about">¿Cómo funciona Karatsuba?</h2>
+
+                <p>
+                    El algoritmo de Karatsuba es un método eficiente para multiplicar números grandes. Fue desarrollado
+                    por
+                    Anatolii Karatsuba en 1960 y utiliza una técnica llamada "divide y vencerás" para reducir el número
+                    de
+                    multiplicaciones requeridas. Esto lo hace más rápido que la multiplicación tradicional.
+                </p>
+
+                <h3>Pasos del algoritmo</h3>
+                <p>
+                    Primero, se dividen los dos números a multiplicar en dos partes cada uno: una "parte alta" (mitad
+                    izquierda) y
+                    una "parte baja" (mitad derecha). Luego, se calculan tres productos importantes:
+                </p>
+                <p>
+                    El primer producto, llamado <em>z0</em>, es el resultado de multiplicar las partes bajas de ambos
+                    números.
+                    El segundo producto, <em>z1</em>, se obtiene al multiplicar la suma de las partes altas y bajas de
+                    los dos
+                    números.
+                    Finalmente, el tercer producto, <em>z2</em>, es el resultado de multiplicar las partes altas de
+                    ambos números.
+                </p>
+                <p>
+                    Con estos valores calculados, se combina el resultado utilizando la fórmula:
+                </p>
+                <p>
+                    <code>resultado = z2 × 10^(2m) + (z1 - z2 - z0) × 10^m + z0</code>,
+                </p>
+                <p>
+                    donde <em>m</em> representa la mitad de la longitud original de los números.
+                </p>
+
+                <h3>Ejemplo</h3>
+                <p>Supongamos que queremos multiplicar los números <strong>1234</strong> y <strong>5678</strong>:</p>
+                <p>
+                    Primero, dividimos los números. Para el número 1234, la parte alta es 12 y la parte baja es 34. Para
+                    el número
+                    5678,
+                    la parte alta es 56 y la parte baja es 78.
+                </p>
+                <p>
+                    Luego, calculamos los tres productos:
+                    <br><em>z0:</em> 34 × 78 = 2652
+                    <br><em>z1:</em> (12 + 34) × (56 + 78) = 46 × 134 = 6164
+                    <br><em>z2:</em> 12 × 56 = 672
+                </p>
+                <p>
+                    Finalmente, combinamos estos resultados usando la fórmula:
+                    <br><code>resultado = 672 × 10^(2×2) + (6164 - 672 - 2652) × 10^2 + 2652</code>
+                </p>
+                <p>
+                    El resultado es <strong>7006652</strong>, lo cual confirma que 1234 × 5678 = 7006652.
+                </p>
+
+                <h3>Ventajas del algoritmo</h3>
+                <p>
+                    El algoritmo reduce el número de multiplicaciones de 4 (en el método tradicional) a 3 por cada
+                    división. Esto lo
+                    hace más rápido para números grandes.
+                </p>
+
+                <h3>Limitaciones</h3>
+                <p>
+                    Sin embargo, no es tan eficiente para números pequeños, ya que la sobrecarga del proceso puede
+                    hacerlo más
+                    lento.
+                    También requiere dividir y manejar números de forma recursiva, lo que puede complicar algunas
+                    implementaciones.
+                </p>
+            </div>
+
+
+
+        </div>
+        <!--Lado Derecho -->
+        <!-- Info, Ayuda, Ejemplos -->
+        <div class="main_boxes">
+            <div class="contenedor_btn_prime">
+                <div class="prime_btn  prime_btn_activo">Info</div>
+                <div class="prime_btn">Ayuda</div>
+                <div class="prime_btn">Ejemplos</div>
+            </div>
+
+            <div class="screen">
+                <div class="screen_ayuda">
+                    <h2>¿Qué es Karatsuba?</h2>
+                    <p>
+                        Esta herramienta utiliza el algoritmo de Karatsuba para multiplicar números grandes de forma
+                        eficiente. En lugar de
+                        multiplicar directamente, el algoritmo divide los números en partes más pequeñas, lo que permite
+                        realizar la
+                        operación en menos pasos y con menor tiempo de cálculo.
+                    </p>
+                    <p>
+                        Solo necesitas ingresar los dos números que deseas multiplicar y presionar "IR". El algoritmo
+                        hará el resto y
+                        mostrará el resultado de la multiplicación.
+                    </p>
+
+                    <div class="about_me">
+                        <div>
+                            <img src="assets/img/utb-logotipo_page_mini.png" class="logo">
+                        </div>
+
+                        <div class="der_me">
+                            <h4>Universidad Técnologica de Bolívar</h4>
+                            <h5 style="margin-bottom: 3px;">Estructuras de Datos - 2024</h5>
+                            <p>Eddy L. - T00078973</p>
+                            <p>David P. - T00079273</p>
+                            <p>Jose P. - T00079768</p>
+                            <p>Juan C. - T00068444</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="logica.js">
+    </script>
+</body>
+
+</html>
