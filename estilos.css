@@ -80,7 +80,7 @@ header {
   display: none;
 }
 .space_msj {
-  height: 50px;
+  min-height: 50px;
 }
 .message {
   color: red;
